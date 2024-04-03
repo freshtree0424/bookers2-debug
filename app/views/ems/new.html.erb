@@ -1,0 +1,76 @@
+<h1>Ems#new</h1>
+<p>Find me in app/views/ems/new.html.erb</p>
+<%= form_with(model: @em, local: true) do |form| %>
+  <% if @em.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@em.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @em.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% end %>
+
+<%= form_with model: @em, local:true do |f| %>
+  <table class="table">
+    <thred>
+      <tr>
+        <th></th>
+        <th>全くちがう</th>
+        <th>ちがう</th>
+        <th>どちらでもない</th>
+        <th>そうだ</th>
+        <th>全くそうだ</th>
+      </tr>
+    </thred>
+    <tobody>
+      <tr><!--逆転項目-->
+        <td>小さなことでくよくよしない</td>
+        <td><%= f.radio_button :em1, 1 %></td>
+        <td><%= f.radio_button :em1, 2 %></td>
+        <td><%= f.radio_button :em1, 3 %></td>
+        <td><%= f.radio_button :em1, 4 %></td>
+        <td><%= f.radio_button :em1, 5 %></td>
+      </tr>
+      <tr>
+        <td>ものごとがうまく行かないのではないかと，よく心配する</td>
+        <td><%= f.radio_button :em2, 1 %></td>
+        <td><%= f.radio_button :em2, 2 %></td>
+        <td><%= f.radio_button :em2, 3 %></td>
+        <td><%= f.radio_button :em2, 4 %></td>
+        <td><%= f.radio_button :em2, 5 %></td>
+      </tr>
+      <tr><!--逆転項目-->
+        <td>緊張してふるえるようなことはない</td>
+        <td><%= f.radio_button :em3, 1 %></td>
+        <td><%= f.radio_button :em3, 2 %></td>
+        <td><%= f.radio_button :em3, 3 %></td>
+        <td><%= f.radio_button :em3, 4 %></td>
+        <td><%= f.radio_button :em3, 5 %></td>
+      </tr>
+      <tr>
+        <td>よく緊張する</td>
+        <td><%= f.radio_button :em4, 1 %></td>
+        <td><%= f.radio_button :em4, 2 %></td>
+        <td><%= f.radio_button :em4, 3 %></td>
+        <td><%= f.radio_button :em4, 4 %></td>
+        <td><%= f.radio_button :em4, 5 %></td>
+      </tr>
+      <tr>
+        <td>見捨てられた感じがする</td>
+        <td><%= f.radio_button :em5, 1 %></td>
+        <td><%= f.radio_button :em5, 2 %></td>
+        <td><%= f.radio_button :em5, 3 %></td>
+        <td><%= f.radio_button :em5, 4 %></td>
+        <td><%= f.radio_button :em5, 5 %></td>
+      </tr>
+    </tobody>
+  </table>
+
+
+<%= f.submit "次へ", class: "btn btn-success" %>
+
+<% end %>

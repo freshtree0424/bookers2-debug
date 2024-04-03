@@ -1,0 +1,39 @@
+<h1>Exes#new</h1>
+<p>Find me in app/views/exes/new.html.erb</p>
+<%= form_with model: @ex, local:true do |f| %>
+  <table class="table">
+    <thred>
+    <tr>
+      <th></th>
+      <th>全くちがう</th>
+      <th>ちがう</th>
+      <th>どちらでもない</th>
+      <th>そうだ</th>
+      <th>全くそうだ</th>
+    </tr>
+    </thred>
+    <tobody>
+    <tr><!--逆転項目-->
+    <td>もの静かである</td>
+    <td><%= f.radio_button :ex1, "false" %></td>
+    <td><%= f.radio_button :ex1, "false" %></td>
+    <td><%= f.radio_button :ex1, "false" %></td>
+    <td><%= f.radio_button :ex1, "false" %></td>
+    <td><%= f.radio_button :ex1, "false" %></td>
+    </tobody>
+    </tr>
+    <tr>
+    <td>じっとしているのが嫌いである</td>
+    <td><%= f.radio_button :ex2, "false" %></td>
+    <td><%= f.radio_button :ex2, "false" %></td>
+    <td><%= f.radio_button :ex2, "false" %></td>
+    <td><%= f.radio_button :ex2, "false" %></td>
+    <td><%= f.radio_button :ex2, "false" %></td>
+    </tobody>
+    </tr>
+  </table>
+
+
+<%= f.submit "診断", class: "btn btn-success" %>
+
+<% end %>
